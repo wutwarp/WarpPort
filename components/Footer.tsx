@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer>
       <div className="section-shell footer-inner">
-        <a className="brand" href="#home"><span className="brand-mark">P</span><span>Pongsakorn</span></a>
+        <a className="brand" href="#home"><span className="brand-mark">P</span><span>Wut Pongsakorn</span></a>
         <p>{copy.role}</p>
         <a href="#home">{copy.backToTop} ↑</a>
       </div>

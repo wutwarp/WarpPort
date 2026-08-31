@@ -30,7 +30,7 @@ export function HeroSection() {
           <div className="code-bar"><i /><i /><i /><span>pongsakorn.ts</span></div>
           <div className="code-content">
             <p><b>01</b><span className="code-blue">const</span> engineer = {'{'}</p>
-            <p><b>02</b>&nbsp;&nbsp;name: <span className="code-green">&quot;Pongsakorn&quot;</span>,</p>
+            <p><b>02</b>&nbsp;&nbsp;name: <span className="code-green">&quot;Wut Pongsakorn&quot;</span>,</p>
             <p><b>03</b>&nbsp;&nbsp;focus: <span className="code-green">&quot;Full Stack&quot;</span>,</p>
             <p><b>04</b>&nbsp;&nbsp;mindset: <span className="code-green">&quot;{copy.mindset}&quot;</span>,</p>
             <p><b>05</b>&nbsp;&nbsp;experience: <span className="code-green">&quot;{copy.experience}&quot;</span></p>

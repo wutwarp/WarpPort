@@ -7,6 +7,7 @@ export type Project = {
   techStack: string[];
   type: LocalizedText;
   image: string;
+  images?: string[];
   preview: "hr" | "ranking" | "website" | "service" | "monitor" | "warehouse" | "game";
   accent: string;
 };
@@ -24,7 +25,12 @@ export const projects: Project[] = [
     },
     techStack: ["ASP.NET Core", "C#", "jQuery", "SQL Server"],
     type: { en: "Enterprise System", th: "ระบบองค์กร" },
-    image: "/projects/stinhr.png",
+    image: "/projects/stinhr/stinhr-01.avif",
+    images: [
+      "/projects/stinhr/stinhr-01.avif",
+      "/projects/stinhr/stinhr-02.avif",
+      "/projects/stinhr/stinhr-03.avif",
+    ],
     preview: "hr",
     accent: "#2979ff",
   },

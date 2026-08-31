@@ -17,9 +17,9 @@ export function Header() {
   return (
     <header className="header-shell">
       <div className="site-header">
-        <a className="brand" href="#home" aria-label={`Pongsakorn — ${copy.home}`}>
+        <a className="brand" href="#home" aria-label={`Wut Pongsakorn — ${copy.home}`}>
           <span className="brand-mark">P</span>
-          <span>Pongsakorn</span>
+          <span>Wut Pongsakorn</span>
         </a>
         <nav className="desktop-nav" aria-label={copy.mainLabel}>
           {links.map((link) => (

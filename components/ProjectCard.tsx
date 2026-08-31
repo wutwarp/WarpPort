@@ -3,9 +3,22 @@ import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/i18n";
 import { ProjectMedia } from "./ProjectMedia";
 
-export function ProjectCard({ project, index, language, copy }: { project: Project; index: number; language: Language; copy: (typeof translations)[Language]["projects"] }) {
+export function ProjectCard({ project, index, language, copy, onOpen }: { project: Project; index: number; language: Language; copy: (typeof translations)[Language]["projects"]; onOpen: () => void }) {
   return (
-    <article className={`project-card ${index === 0 ? "project-featured" : ""}`}>
+    <article
+      className={`project-card project-card-clickable ${index === 0 ? "project-featured" : ""}`}
+      role="button"
+      tabIndex={0}
+      aria-haspopup="dialog"
+      aria-label={`${copy.openProject}: ${project.name[language]}`}
+      onClick={onOpen}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onOpen();
+        }
+      }}
+    >
       <ProjectMedia project={project} priority={index === 0} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
       <div className="project-copy">
         <div className="project-kicker"><span>{project.type[language]}</span><b>{String(index + 1).padStart(2, "0")}</b></div>
