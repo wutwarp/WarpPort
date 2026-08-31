@@ -1,26 +1,42 @@
+"use client";
+
+import { translations } from "@/lib/i18n";
+import { LanguageToggle } from "./LanguageToggle";
+import { useLanguage } from "./LanguageProvider";
+
 export function Header() {
-  const links = ["Home", "Projects", "Skills", "Contact"];
+  const { language } = useLanguage();
+  const copy = translations[language].navigation;
+  const links = [
+    { label: copy.home, href: "#home" },
+    { label: copy.projects, href: "#projects" },
+    { label: copy.skills, href: "#skills" },
+    { label: copy.contact, href: "#contact" },
+  ];
 
   return (
     <header className="header-shell">
       <div className="site-header">
-        <a className="brand" href="#home" aria-label="Pongsakorn — home">
+        <a className="brand" href="#home" aria-label={`Pongsakorn — ${copy.home}`}>
           <span className="brand-mark">P</span>
           <span>Pongsakorn</span>
         </a>
-        <nav className="desktop-nav" aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label={copy.mainLabel}>
           {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`}>{link}</a>
+            <a key={link.href} href={link.href}>{link.label}</a>
           ))}
         </nav>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation"><span /><span /></summary>
-          <nav aria-label="Mobile navigation">
-            {links.map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`}>{link}</a>
-            ))}
-          </nav>
-        </details>
+        <div className="header-actions">
+          <LanguageToggle />
+          <details className="mobile-menu">
+            <summary aria-label={copy.openMenu}><span /><span /></summary>
+            <nav aria-label={copy.mobileLabel}>
+              {links.map((link) => (
+                <a key={link.href} href={link.href}>{link.label}</a>
+              ))}
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
   );

@@ -1,15 +1,17 @@
 import type { Project } from "@/data/portfolio";
+import type { Language } from "@/lib/i18n";
+import { translations } from "@/lib/i18n";
 import { ProjectMedia } from "./ProjectMedia";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({ project, index, language, copy }: { project: Project; index: number; language: Language; copy: (typeof translations)[Language]["projects"] }) {
   return (
     <article className={`project-card ${index === 0 ? "project-featured" : ""}`}>
-      <ProjectMedia project={project} priority={index === 0} />
+      <ProjectMedia project={project} priority={index === 0} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
       <div className="project-copy">
-        <div className="project-kicker"><span>{project.type}</span><b>{String(index + 1).padStart(2, "0")}</b></div>
-        <h3>{project.name}</h3>
-        <p>{project.description}</p>
-        <div className="tech-list" aria-label="Technology stack">
+        <div className="project-kicker"><span>{project.type[language]}</span><b>{String(index + 1).padStart(2, "0")}</b></div>
+        <h3>{project.name[language]}</h3>
+        <p>{project.description[language]}</p>
+        <div className="tech-list" aria-label={copy.techStackLabel}>
           {project.techStack.map((tech) => <span key={tech}>{tech}</span>)}
         </div>
       </div>

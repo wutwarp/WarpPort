@@ -11,7 +11,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-body { margin: 0; background: #fbfdff; color: var(--ink); font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; }
+body { margin: 0; background: #fbfdff; color: var(--ink); font-family: var(--font-geist-sans), "Noto Sans Thai", "Leelawadee UI", Tahoma, Arial, Helvetica, sans-serif; }
 a { color: inherit; text-decoration: none; }
 button, summary, a { -webkit-tap-highlight-color: transparent; }
 .section-shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
@@ -24,6 +24,11 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .desktop-nav { display: flex; gap: 3px; padding: 4px; border: 1px solid #ffffffb5; border-radius: 14px; color: #526177; background: #eef4fa6b; box-shadow: inset 0 1px 0 #ffffffb8; font-size: 12px; font-weight: 650; }
 .desktop-nav a { position: relative; padding: 8px 15px; border-radius: 10px; transition: color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease; }
 .desktop-nav a:hover { color: #173967; background: #ffffffb8; box-shadow: 0 3px 10px #17375c14, inset 0 1px 0 #ffffff; transform: translateY(-1px); }
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.language-toggle { display: flex; gap: 2px; padding: 3px; border: 1px solid #ffffffb5; border-radius: 12px; background: #eef4fa6b; box-shadow: inset 0 1px 0 #ffffffb8; }
+.language-toggle button { min-width: 34px; height: 30px; padding: 0 8px; border: 0; border-radius: 9px; color: #738198; background: transparent; cursor: pointer; font: 700 10px var(--font-geist-sans), sans-serif; letter-spacing: .04em; transition: color .2s ease, background .2s ease, box-shadow .2s ease; }
+.language-toggle button:hover { color: #173967; }
+.language-toggle button.is-active { color: #1758d6; background: #ffffffcf; box-shadow: 0 3px 10px #17375c16, inset 0 1px 0 #fff; }
 .mobile-menu { display: none; position: relative; }
 .mobile-menu summary { width: 38px; height: 38px; display: grid; align-content: center; gap: 6px; padding: 10px; border: 1px solid #ffffffc7; border-radius: 12px; cursor: pointer; list-style: none; background: #f2f7fc8f; box-shadow: inset 0 1px 0 #fff, 0 5px 14px #18385b10; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
@@ -35,6 +40,13 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header, .mobile-menu nav { background: #f8fbff; }
 }
+
+html[lang="th"] h2 { line-height: 1.17; letter-spacing: -.035em; }
+html[lang="th"] .hero-description,
+html[lang="th"] .section-heading > p,
+html[lang="th"] .project-card p,
+html[lang="th"] .skills-intro > p:not(.section-label),
+html[lang="th"] .contact-copy > p:not(.section-label) { line-height: 1.85; }
 
 .hero { min-height: 700px; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 68px; padding: 90px 0 140px; overflow: hidden; }
 .eyebrow { display: flex; align-items: center; gap: 10px; color: #38638f; font-size: 11px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }

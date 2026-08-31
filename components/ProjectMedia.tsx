@@ -22,7 +22,7 @@ function Placeholder({ project }: { project: Project }) {
   );
 }
 
-export function ProjectMedia({ project, priority = false }: { project: Project; priority?: boolean }) {
+export function ProjectMedia({ project, priority = false, imageAlt }: { project: Project; priority?: boolean; imageAlt: string }) {
   const [failed, setFailed] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ export function ProjectMedia({ project, priority = false }: { project: Project; 
       {!failed && (
         <img
           src={project.image}
-          alt={`${project.shortName} project screenshot`}
+          alt={imageAlt}
           loading={priority ? "eager" : "lazy"}
           onError={() => setFailed(true)}
         />
