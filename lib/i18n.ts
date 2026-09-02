@@ -65,6 +65,7 @@ export const translations = {
       browseHint: "Use the arrow keys or swipe to browse",
       noImages: "Project images coming soon",
       liveDemo: "Try Live Demo",
+      viewAllProjects: "View All Projects",
     },
     skills: {
       label: "Technical toolkit",
@@ -152,6 +153,7 @@ export const translations = {
       browseHint: "ใช้ปุ่มลูกศรหรือปัดหน้าจอเพื่อดูรูป",
       noImages: "กำลังเตรียมภาพโปรเจกต์",
       liveDemo: "ทดลองใช้งานจริง",
+      viewAllProjects: "ดูโปรเจกต์ทั้งหมด",
     },
     skills: {
       label: "ชุดเครื่องมือทางเทคนิค",
