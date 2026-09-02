@@ -9,6 +9,16 @@ export function HeroSection() {
 
   return (
     <section className="hero" id="home">
+      <picture className="hero-media" aria-hidden="true">
+        <source media="(max-width: 780px)" srcSet="/images/hero-mobile_result.avif" type="image/avif" />
+        <img
+          src="/images/hero-cat-sky.avif"
+          alt=""
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
       <div className="hero-scrim" />
       <div className="section-shell hero-layout">
         <div className="hero-copy">

@@ -19,7 +19,7 @@ export function ProjectCard({ project, index, language, copy, onOpen }: { projec
         }
       }}
     >
-      <ProjectMedia project={project} priority={index === 0} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
+      <ProjectMedia project={project} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
       <div className="project-copy">
         <div className="project-kicker"><span>{project.type[language]}</span><b>{String(index + 1).padStart(2, "0")}</b></div>
         <h3>{project.name[language]}</h3>

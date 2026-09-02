@@ -40,6 +40,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" as="image" href="/images/hero-cat-sky.avif" type="image/avif" media="(min-width: 781px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/hero-mobile_result.avif" type="image/avif" media="(max-width: 780px)" fetchPriority="high" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
