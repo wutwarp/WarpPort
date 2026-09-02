@@ -136,12 +136,12 @@ export const projects: Project[] = [
 
 export const skillGroups = [
   {
-    title: { en: "Frontend", th: "ส่วนหน้า" },
+    title: { en: "Frontend", th: "หน้าจอแสดงผล" },
     icon: "<>",
     skills: ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "jQuery"],
   },
   {
-    title: { en: "Backend", th: "ส่วนหลัง" },
+    title: { en: "Backend", th: "ระบบหลังบ้าน" },
     icon: "{ }",
     skills: ["ASP.NET Core", "ASP.NET MVC", "C#", "Node.js", "REST API"],
   },
