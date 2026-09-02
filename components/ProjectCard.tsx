@@ -27,6 +27,18 @@ export function ProjectCard({ project, index, language, copy, onOpen }: { projec
         <div className="tech-list" aria-label={copy.techStackLabel}>
           {project.techStack.map((tech) => <span key={tech}>{tech}</span>)}
         </div>
+        {project.demoUrl && (
+          <a
+            className="project-demo-link"
+            href={project.demoUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            onKeyDown={(event) => event.stopPropagation()}
+          >
+            {copy.liveDemo} <span>↗</span>
+          </a>
+        )}
       </div>
     </article>
   );

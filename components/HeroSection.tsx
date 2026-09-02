@@ -29,7 +29,7 @@ export function HeroSection() {
           </div>
           <div className="stats-card glass-card">
             <div><b>4+</b><span>{copy.years}</span></div>
-            <div><b>10+</b><span>{copy.projects}</span></div>
+            <div><b>15+</b><span>{copy.projects}</span></div>
             <div><b>100%</b><span>{copy.mindsetStat}</span></div>
           </div>
         </div>

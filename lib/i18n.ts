@@ -64,6 +64,7 @@ export const translations = {
       imageOf: "of",
       browseHint: "Use the arrow keys or swipe to browse",
       noImages: "Project images coming soon",
+      liveDemo: "Try Live Demo",
     },
     skills: {
       label: "Technical toolkit",
@@ -150,6 +151,7 @@ export const translations = {
       imageOf: "จาก",
       browseHint: "ใช้ปุ่มลูกศรหรือปัดหน้าจอเพื่อดูรูป",
       noImages: "กำลังเตรียมภาพโปรเจกต์",
+      liveDemo: "ทดลองใช้งานจริง",
     },
     skills: {
       label: "ชุดเครื่องมือทางเทคนิค",

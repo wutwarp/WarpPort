@@ -83,6 +83,8 @@ h2 { margin:0; font-size:clamp(36px,4.5vw,58px); line-height:1.05; letter-spacin
 .project-card p { margin:0; color:#66758a; font-size:12px; line-height:1.68; }
 .tech-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:18px; }
 .tech-list span { padding:6px 8px; border:1px solid #d9e7f4e6; border-radius:7px; color:#617086; background:#ffffffd1; font:8px var(--font-geist-mono),monospace; }
+.project-demo-link { width:fit-content; display:inline-flex; align-items:center; gap:8px; margin-top:18px; padding:10px 13px; border:1px solid #cfe3f8; border-radius:10px; color:#1765da; background:#eef7ff; font-size:11px; font-weight:760; transition:.2s ease; }
+.project-demo-link:hover { color:#fff; background:var(--blue); border-color:var(--blue); transform:translateY(-1px); box-shadow:0 9px 22px #2f7bff38; }
 .project-placeholder { display:grid; place-items:center; padding:25px; background:linear-gradient(135deg,color-mix(in srgb,var(--project-accent) 10%,#eef7ff),#fff 74%); }
 .mock-window { width:94%; height:84%; min-height:160px; overflow:hidden; border:1px solid #d4e0ed; border-radius:10px; background:#fff; box-shadow:0 16px 30px #23436133; }
 .mock-top { height:26px; display:flex; align-items:center; gap:4px; padding:0 9px; color:#8290a3; background:#f7fafc; border-bottom:1px solid #e7edf4; font:6px var(--font-geist-mono),monospace; }
