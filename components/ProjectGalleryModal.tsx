@@ -139,10 +139,15 @@ export function ProjectGalleryModal({
           </div>
 
           <aside className="gallery-details">
-            <p>{project.description[language]}</p>
+            <p>{(project.detailDescription ?? project.description)[language]}</p>
             <div className="tech-list" aria-label={copy.techStackLabel}>
               {project.techStack.map((tech) => <span key={tech}>{tech}</span>)}
             </div>
+            {project.demoUrl && (
+              <a className="project-demo-link" href={project.demoUrl} target="_blank" rel="noreferrer">
+                {copy.liveDemo} <span>↗</span>
+              </a>
+            )}
           </aside>
         </div>
       </section>

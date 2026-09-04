@@ -8,38 +8,41 @@ export function HeroSection() {
   const copy = translations[language].hero;
 
   return (
-    <section className="hero section-shell" id="home">
-      <div className="hero-copy">
-        <p className="eyebrow"><span /> {copy.availability}</p>
-        <h1>{copy.titleFirst}<br /><span>{copy.titleSecond}</span></h1>
-        <p className="hero-description">
-          {copy.description}
-        </p>
-        <div className="hero-actions">
-          <a className="button button-primary" href="#projects">{copy.viewProjects} <span>↘</span></a>
-          <a className="button button-secondary" href="#contact">{copy.contactMe}</a>
-        </div>
-        <div className="hero-meta" aria-label={copy.focus}>
-          <span>{copy.focus}</span>
-        </div>
-      </div>
-      <div className="hero-visual">
-        <div className="hero-orbit orbit-one" />
-        <div className="hero-orbit orbit-two" />
-        <div className="hero-panel" aria-label={copy.profileLabel}>
-          <div className="code-bar"><i /><i /><i /><span>pongsakorn.ts</span></div>
-          <div className="code-content">
-            <p><b>01</b><span className="code-blue">const</span> engineer = {'{'}</p>
-            <p><b>02</b>&nbsp;&nbsp;name: <span className="code-green">&quot;Wut Pongsakorn&quot;</span>,</p>
-            <p><b>03</b>&nbsp;&nbsp;focus: <span className="code-green">&quot;Full Stack&quot;</span>,</p>
-            <p><b>04</b>&nbsp;&nbsp;mindset: <span className="code-green">&quot;{copy.mindset}&quot;</span>,</p>
-            <p><b>05</b>&nbsp;&nbsp;experience: <span className="code-green">&quot;{copy.experience}&quot;</span></p>
-            <p><b>06</b>{'}'};</p>
+    <section className="hero" id="home">
+      <picture className="hero-media" aria-hidden="true">
+        <source media="(max-width: 780px)" srcSet="/images/hero-mobile_result.avif" type="image/avif" />
+        <img
+          src="/images/hero-cat-sky.avif"
+          alt=""
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div className="hero-scrim" />
+      <div className="section-shell hero-layout">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> {copy.availability}</p>
+          <p className="hero-greeting">{copy.greeting}</p>
+          <h1>{copy.titleFirst}<br /><span>{copy.titleSecond}</span></h1>
+          <p className="hero-description">{copy.description}</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">{copy.viewProjects} <span>→</span></a>
+            <a className="button button-secondary" href="#contact">{copy.contactMe}</a>
           </div>
-          <div className="panel-status"><span>●</span> {copy.systemsOnline} <b>TH / GMT+7</b></div>
+          <div className="hero-meta" aria-label={copy.focus}><span>{copy.focus}</span></div>
         </div>
-        <div className="floating-note note-top"><span>✓</span><div><b>{copy.productionReady}</b><small>{copy.reliableByDesign}</small></div></div>
-        <div className="floating-note note-bottom"><span>↗</span><div><b>{copy.endToEnd}</b><small>{copy.process}</small></div></div>
+        <div className="hero-cards" aria-label={copy.profileLabel}>
+          <div className="role-card glass-card">
+            <span className="role-icon">&lt;/&gt;</span>
+            <div><b>{copy.roleTitle}</b><p>{copy.roleDescription}</p></div>
+          </div>
+          <div className="stats-card glass-card">
+            <div><b>4+</b><span>{copy.years}</span></div>
+            <div><b>15+</b><span>{copy.projects}</span></div>
+            <div><b>100%</b><span>{copy.mindsetStat}</span></div>
+          </div>
+        </div>
       </div>
     </section>
   );

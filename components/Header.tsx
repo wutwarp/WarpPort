@@ -9,8 +9,10 @@ export function Header() {
   const copy = translations[language].navigation;
   const links = [
     { label: copy.home, href: "#home" },
-    { label: copy.projects, href: "#projects" },
+    { label: copy.about, href: "#about" },
     { label: copy.skills, href: "#skills" },
+    { label: copy.projects, href: "#projects" },
+    { label: copy.experience, href: "#experience" },
     { label: copy.contact, href: "#contact" },
   ];
 

@@ -5,6 +5,18 @@ import { defineConfig } from "vite";
 
 // Nitro detects Vercel automatically during CI builds and emits the
 // platform-specific Build Output API bundle in .vercel/output.
-export default defineConfig({
-  plugins: [tailwindcss(), vinext(), nitro()],
-});
+export default defineConfig(({ command }) => ({
+  // Nitro's fetchable RSC environment is only needed for deployment builds.
+  // Keeping it out of dev avoids plugin-rsc expecting a missing runner.
+  plugins: [tailwindcss(), vinext(), command === "build" && nitro()],
+  nitro: {
+    routeRules: {
+      "/images/**": {
+        headers: { "cache-control": "public, max-age=604800, stale-while-revalidate=86400" },
+      },
+      "/projects/**": {
+        headers: { "cache-control": "public, max-age=604800, stale-while-revalidate=86400" },
+      },
+    },
+  },
+}));

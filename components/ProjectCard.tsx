@@ -19,7 +19,7 @@ export function ProjectCard({ project, index, language, copy, onOpen }: { projec
         }
       }}
     >
-      <ProjectMedia project={project} priority={index === 0} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
+      <ProjectMedia project={project} imageAlt={`${project.shortName} ${copy.screenshotSuffix}`} />
       <div className="project-copy">
         <div className="project-kicker"><span>{project.type[language]}</span><b>{String(index + 1).padStart(2, "0")}</b></div>
         <h3>{project.name[language]}</h3>
@@ -27,6 +27,18 @@ export function ProjectCard({ project, index, language, copy, onOpen }: { projec
         <div className="tech-list" aria-label={copy.techStackLabel}>
           {project.techStack.map((tech) => <span key={tech}>{tech}</span>)}
         </div>
+        {project.demoUrl && (
+          <a
+            className="project-demo-link"
+            href={project.demoUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            onKeyDown={(event) => event.stopPropagation()}
+          >
+            {copy.liveDemo} <span>↗</span>
+          </a>
+        )}
       </div>
     </article>
   );
